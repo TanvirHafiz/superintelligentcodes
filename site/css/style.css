@@ -124,16 +124,16 @@ em,.it{font-style:italic}
 @media (max-width:760px){.stats{grid-template-columns:1fr 1fr;row-gap:36px}.stat:nth-child(3){border-left:0;padding-left:0}}
 
 /* FLAGSHIPS */
-.flag{position:relative;background:var(--bone);color:var(--ink);padding-top:clamp(80px,10vw,160px)}
+.flag{position:relative;background:var(--bone);color:var(--ink);padding-top:clamp(48px,5vw,80px)}
 .flag .eyebrow{color:#5e584c}
-.flag-head{padding:0 var(--gut) clamp(40px,6vw,90px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.flag-head{padding:0 var(--gut) clamp(8px,1.5vw,24px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
 .flag .h2 em{color:#d1241a}
 .flag-hint{color:#5e584c}
 .flag-hint span{display:inline-block;animation:nudge 1.6s var(--ease) infinite}
 @keyframes nudge{50%{transform:translateX(8px)}}
 .flag-pin{position:relative;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:center}
 .flag-track{display:flex;gap:clamp(22px,4vw,70px);padding:0 var(--gut);will-change:transform;align-items:center}
-.fp{position:relative;flex:none;width:min(88vw,1180px);height:min(74vh,720px);display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(20px,2.6vw,40px);align-items:stretch;padding:clamp(12px,1.4vw,20px);background:#e3dbc6;border:1px solid rgba(11,10,8,.12);border-radius:18px;box-shadow:0 30px 60px -40px rgba(11,10,8,.35)}
+.fp{position:relative;flex:none;width:min(88vw,1180px);height:min(80vh,760px);display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(20px,2.6vw,40px);align-items:stretch;padding:clamp(12px,1.4vw,20px);background:#e3dbc6;border:1px solid rgba(11,10,8,.12);border-radius:18px;box-shadow:0 30px 60px -40px rgba(11,10,8,.35)}
 .fp-img{position:relative;border-radius:10px;overflow:hidden;background:var(--c,#222);cursor:pointer}
 .fp-img img{position:absolute;inset:-4% -12%;width:124%;height:108%;max-width:none;object-fit:cover;will-change:transform}
 .fp-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 40%)}
