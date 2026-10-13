@@ -110,7 +110,7 @@ em,.it{font-style:italic}
 .mq-item i{display:block;width:.28em;height:.28em;border-radius:50%;background:var(--sun);flex:none}
 
 /* MANIFESTO */
-.manifesto{padding:clamp(100px,16vw,260px) var(--gut) clamp(80px,10vw,160px)}
+.manifesto{padding:clamp(56px,6vw,96px) var(--gut) clamp(72px,8vw,128px)}
 .manifesto-text{font:500 clamp(28px,4vw,62px)/1.22 var(--serif);letter-spacing:-.012em;max-width:24em;font-variation-settings:"opsz" 18}
 .manifesto-text .w{display:inline-block;overflow:hidden;vertical-align:top;white-space:pre;padding:.08em .08em .2em;margin:-.08em -.08em -.2em}
 .manifesto-text .wi{display:inline-block;will-change:transform}
