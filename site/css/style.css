@@ -169,10 +169,10 @@ em,.it{font-style:italic}
 
 
 /* ANDROID */
-.droid{position:relative;padding:clamp(90px,11vw,180px) var(--gut) clamp(80px,10vw,160px);background:
+.droid{position:relative;padding:clamp(56px,6vw,96px) var(--gut) clamp(40px,4vw,64px);background:
   radial-gradient(50% 40% at 15% 20%,rgba(74,222,154,.13),transparent 70%),
   radial-gradient(40% 40% at 90% 85%,rgba(74,222,154,.08),transparent 70%),var(--ink);overflow:hidden}
-.droid-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(48px,6vw,96px)}
+.droid-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,60px)}
 .droid .h2 em{color:#4ade9a}
 .droid-lede{max-width:34ch;color:rgba(239,232,216,.7)}
 .droid-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,3vw,48px);align-items:start}
@@ -202,7 +202,7 @@ em,.it{font-style:italic}
 }
 
 /* ROOMS */
-.rooms{padding:clamp(80px,10vw,160px) var(--gut)}
+.rooms{padding:clamp(48px,5vw,80px) var(--gut) clamp(56px,6vw,96px)}
 .rooms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .room{position:relative;min-height:clamp(260px,32vw,460px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;text-align:left;isolation:isolate}
 .room::before{content:"";position:absolute;inset:0;background:var(--rc);transform:translateY(101%);transition:transform .7s var(--ease);z-index:-1}
