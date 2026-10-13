@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects by category — Tanvir Hafiz</title>
+<meta name="description" content="A category-by-category list of Tanvir Hafiz's open-source projects, with descriptions and links.">
+<meta name="theme-color" content="#faf8f3">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..700;1,6..96,500..600&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+Bengali:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f3; --ink:#1b1915; --mute:#6b655a; --rule:#dcd6c8; --accent:#0e4d3a; --link:#0e4d3a;
+  --serif:"Bodoni Moda","Didot",Georgia,serif; --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#121110; --ink:#ece6d8; --mute:#9b9486; --rule:#2c2923; --accent:#7fd1ae; --link:#7fd1ae}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font:17px/1.65 var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,64px) 22px 90px}
+.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--mute);margin-bottom:clamp(40px,8vw,80px)}
+.top a{color:var(--mute)}
+.top a:hover{color:var(--ink)}
+h1{font:600 clamp(34px,6vw,52px)/1.05 var(--serif);font-variation-settings:"opsz" 18;letter-spacing:-.02em;margin-bottom:14px}
+.lede{color:var(--mute);max-width:56ch}
+.jump{display:flex;flex-wrap:wrap;gap:6px 22px;margin:34px 0 0;padding:16px 0;border-block:1px solid var(--rule);font-size:15px}
+.jump span{color:var(--mute);font-size:12px}
+section{margin-top:clamp(48px,8vw,80px);scroll-margin-top:24px}
+h2{font:600 clamp(24px,3.4vw,30px)/1.15 var(--serif);font-variation-settings:"opsz" 18;letter-spacing:-.01em;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+h2 small{font:400 14px var(--sans);color:var(--mute);letter-spacing:0}
+.item{padding:26px 0;border-bottom:1px solid var(--rule)}
+.item h3{font:600 20px/1.3 var(--sans)}
+.item h3 .bn{font:600 17px var(--serif);font-family:"Noto Serif Bengali",serif;color:var(--mute);margin-left:8px;font-weight:600}
+.kind{font-size:13px;color:var(--mute);margin:2px 0 8px}
+.tag{font-weight:500;margin-bottom:6px}
+.item p.what{color:var(--ink);opacity:.88}
+.meta{margin-top:10px;font-size:14px;color:var(--mute)}
+.links{margin-top:12px;font-size:15px;display:flex;flex-wrap:wrap;gap:4px 18px}
+footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--rule);font-size:14px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media print{.top a:last-child,.jump{display:none}body{font-size:12pt}.item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a href="./">← Back to the gallery</a>
+    <a href="https://github.com/TanvirHafiz" target="_blank" rel="noopener noreferrer">github.com/TanvirHafiz ↗</a>
+  </div>
+
+  <header>
+    <h1>Projects, by category</h1>
+    <p class="lede">Open-source work by Tanvir Hafiz, designed and developed with AI. Each entry has a short description and a link to the code or a live version.</p>
+    <nav class="jump" id="jump" aria-label="Categories"><span>Jump to</span></nav>
+  </header>
+
+  <main id="out"></main>
+
+  <noscript><p style="margin-top:40px">This list needs JavaScript. All projects are also on <a href="https://github.com/TanvirHafiz">GitHub</a>.</p></noscript>
+
+  <footer>
+    <span>© <span id="yr"></span> Tanvir Hafiz</span>
+    <a href="./">Back to the gallery</a>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script>
+(function(){
+  var P=window.PROJECTS, C=window.CATS;
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+  var host=function(u){return u.replace(/^https?:\/\//,"").replace(/\/$/,"")};
+  var cats=Object.keys(C).filter(function(k){return k!=="all"});
+  var jump=document.getElementById("jump"), out=document.getElementById("out");
+  cats.forEach(function(k){
+    var list=P.filter(function(p){return p.cat===k}); if(!list.length) return;
+    jump.insertAdjacentHTML("beforeend",'<a href="#'+k+'">'+esc(C[k])+' ('+list.length+')</a>');
+    out.insertAdjacentHTML("beforeend",'<section id="'+k+'"><h2>'+esc(C[k])+'<small>'+list.length+' project'+(list.length>1?'s':'')+'</small></h2>'+
+      list.map(function(p){
+        var links=[];
+        if(p.repo) links.push('<a href="'+p.repo+'" target="_blank" rel="noopener noreferrer">'+(p.repo2?'Generator':'Source code')+' ↗</a>');
+        if(p.repo2) links.push('<a href="'+p.repo2[0]+'" target="_blank" rel="noopener noreferrer">'+esc(p.repo2[1])+' version ↗</a>');
+        if(!p.repo&&!p.live&&p.note) links.push('<span style="color:var(--mute)">'+esc(p.note)+'</span>');
+        if(p.live) links.push('<a href="'+p.live+'" target="_blank" rel="noopener noreferrer">'+esc(p.liveLabel||"Live demo")+' ↗</a>');
+        return '<article class="item" id="'+p.id+'"><h3>'+esc(p.title)+(p.bn?'<span class="bn" lang="bn">'+esc(p.bn)+'</span>':'')+'</h3>'+
+          '<p class="kind">'+esc(p.kind)+'</p><p class="tag">'+esc(p.tagline)+'</p><p class="what">'+esc(p.what)+'</p>'+
+          '<p class="meta">'+p.tags.map(esc).join(' · ')+'</p><div class="links">'+links.join('')+'</div></article>';
+      }).join('')+'</section>');
+  });
+  document.getElementById("yr").textContent=new Date().getFullYear();
+  if(location.hash){var t=document.getElementById(location.hash.slice(1)); t&&t.scrollIntoView();}
+})();
+</script>
+</body>
+</html>
