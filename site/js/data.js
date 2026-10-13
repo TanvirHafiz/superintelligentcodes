@@ -213,7 +213,8 @@ window.PROJECTS = [
     what: "A top-down light-and-mirror puzzle in the style of Mirrors: Tomblight Edition, set in Mughal Dhaka (1641 to 1684) across the Buriganga ghats, Bara Katra, Lalbagh Fort, Pari Bibi's tomb and the Shish Mahal. 24 levels over four chapters, with mirrors, splitters, colour filters, crystals, sun windows that cast real shadows, and a Night Garden chapter where you light a walkable path. Every level has a solver-verified par for a three-star rating, illustrated character portraits tell the story, each solved chamber unlocks a history note, and each chapter has its own Hindustani raga score. Built with Phaser 3, TypeScript and Vite.",
     tags: ["Phaser 3", "TypeScript", "Puzzle", "Dhaka history", "Hindustani music"],
     stat: ["24", "levels in 4 chapters"],
-    repo: "https://github.com/TanvirHafiz/aina-lights-of-jahangirnagar"
+    repo: "https://github.com/TanvirHafiz/aina-lights-of-jahangirnagar",
+    live: "https://tanvirhafiz.itch.io/aina-lights-of-jahangirnagar", liveLabel: "Play on itch.io"
   },
   {
     id: "hartal", title: "Hartal Ludo", bn: "হরতাল লুডু", tagline: "Ludo with bureaucracy and coalition politics",
